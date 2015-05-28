@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1">
+
+    <title>OWB Output</title>
+
+    <style>
+      body {
+        border: 1px solid black;
+      }
+      #console {
+        height: 140px;
+        overflow: scroll;
+        background: #555;
+        color: #fff;
+        border-radius: 5px;
+        width: 80%;
+        margin: 10px auto;
+        padding: 10px;
+      }
+    </style>
+
+    <script src="lib/sha256.js"></script>
+    <script src="lib/gluin.js" defer></script>
+    <script src="lib/jquery-1.11.3.min.js" defer></script>
+    <script src="app.js" defer></script>
+
+  </head>
+
+  <body>
+    <h2>直接Arduinoを操作する</h2>
+    <button id="on">on</button>
+    <button id="off">off</button>
+
+    <hr />
+
+    <h3>Gluin</h3>
+    <h3>ログイン</h3>
+    <button id="login">Login</button>
+
+    <h3>ユーザー情報</h3>
+    <form action="">
+      <input type="text" class="form-control" placeholder="Username" id="gluin_username">
+      <input type="password" class="form-control" placeholder="Password" id="gluin_password">
+      <input type="text" class="form-control" placeholder="Address" id="gluin_address">
+      <input type="submit" class="form-control" value="register" id="register">
+    </form>
+
+    <h2>ログ</h2>
+    <div id="console">
+    </div>
+  </body>
+
+</html>
