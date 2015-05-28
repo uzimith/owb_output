@@ -5,35 +5,6 @@ function log(text) {
 //----------------------------------------
 // Arduino
 //----------------------------------------
-// adb shell netstat起動を確認
-var socket = navigator.mozTCPSocket.open('127.0.0.1', 9943);
-socket.onopen = function () {
-  var param = {
-    // adb shell dmesgでArduinoのdevicenameの確認
-    devicename: '',
-    bitrate: 9600
-  };
-  log('Opened');
-  socket.send(JSON.stringify(param));
-}
-
-socket.onerror = function (evt) {
-  log('Error:' + evt.type);
-}
-
-function send(cmd) {
-  log('Sending ' + cmd);
-  socket.send(cmd + "\r\n");
-}
-
-window.addEventListener("load", function() {
-  $("#off").click(function() {
-    send("1");
-  })
-  $("#on").click(function() {
-    send("2");
-  })
-});
 
 //----------------------------------------
 // gluin
